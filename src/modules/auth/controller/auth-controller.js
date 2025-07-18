@@ -1,10 +1,14 @@
+import { compare } from "bcrypt";
 import { User } from "../../../db/schema/User.js";
 import { logger } from "../../../logger/logger.js";
-import { hashPassword } from "../utils/hash-password.js";
+import { AppError } from "../../../shared/middlewares/ApiError.js";
+import { comaprePassword, hashPassword } from "../utils/hash-password.js";
+import { loginSchema } from "../validator/loginValidator.js";
 import { registerSchema } from "../validator/validator.js";
 import { v4 as uuidv4 } from "uuid";
+import { generateToken } from "../utils/jwt.js";
 
-const login = (req, res) => {};
+
 
 const logout = (req, res) => {};
 
@@ -35,6 +39,34 @@ const logout = (req, res) => {};
 //     logger.error("Error in SignUp", err);
 //   }
 // };
+
+const login = async (req, res)=>{
+  const body = req.body;
+  const {error, value} = loginSchema.validate(body);
+
+  const { email } = value;
+  const user = await User.findOne({email})
+
+  if(!user){
+    throw new AppError(res, "User not found")
+  }
+
+  const passwordMatched = comaprePassword(value.password, user.password);
+  if(!passwordMatched) {
+    throw new AppError(res, "Invalid Password")
+  }
+  const token = generateToken(user.user_id);
+  return res.status(200).json({
+    success: true,
+    user:{
+        id: user.id,
+        token,
+        role: user.role,
+        email: user.email
+    },
+    message: "LoggedIn successfully"
+   })
+}
 
 const register = async (req, res) => {
   try {

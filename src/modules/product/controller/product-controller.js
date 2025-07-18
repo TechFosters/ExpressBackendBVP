@@ -1,6 +1,8 @@
 const getAllProducts = (req, res) => {};
 
-const addProduct = (req, res) => {};
+const addProduct = (req, res) => {
+  
+};
 
 const deleteProduct = (req, res) => {};
 

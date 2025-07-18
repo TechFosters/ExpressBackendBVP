@@ -814,3 +814,20 @@
 {"level":"info","message":"Server is Running on PORT 1234","service":"user-service"}
 {"level":"info","message":"Connection Created Successfully","service":"user-service"}
 {"level":"info","message":"User Created Successfully with id c7d73d0e-266e-4452-8c28-261d072ffbdc","service":"user-service"}
+{"level":"info","message":"Server is Running on PORT 1234","service":"user-service"}
+{"level":"info","message":"Connection Created Successfully","service":"user-service"}
+{"level":"error","message":"User already exists","service":"user-service"}
+{"level":"info","message":"Server is Running on PORT 1234","service":"user-service"}
+{"level":"info","message":"Connection Created Successfully","service":"user-service"}
+{"_original":{"email":"cijay@gmail.com","password":"Vijay@123","phone":"1234457","role":"Admin","userName":"vijay"},"details":[{"context":{"key":"password","label":"password","regex":{},"value":"Vijay@123"},"message":"\"password\" with value \"Vijay@123\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","path":["password"],"type":"string.pattern.base"}],"level":"error","message":"Validation Error \"password\" with value \"Vijay@123\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/","service":"user-service","stack":"ValidationError: \"password\" with value \"Vijay@123\" fails to match the required pattern: /^[a-zA-Z0-9]{3,30}$/"}
+{"level":"info","message":"User Created Successfully with id 66f3b098-6295-48c0-b956-c7bde6f97700","service":"user-service"}
+{"level":"info","message":"Server is Running on PORT 1234","service":"user-service"}
+{"level":"info","message":"Connection Created Successfully","service":"user-service"}
+{"level":"info","message":"Server is Running on PORT 1234","service":"user-service"}
+{"level":"info","message":"Connection Created Successfully","service":"user-service"}
+{"level":"info","message":"Server is Running on PORT 1234","service":"user-service"}
+{"level":"info","message":"Connection Created Successfully","service":"user-service"}
+{"level":"info","message":"Server is Running on PORT 1234","service":"user-service"}
+{"level":"info","message":"Connection Created Successfully","service":"user-service"}
+{"level":"info","message":"Server is Running on PORT 1234","service":"user-service"}
+{"level":"info","message":"Connection Created Successfully","service":"user-service"}
