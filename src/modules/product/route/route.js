@@ -9,11 +9,13 @@ import {
   updatePrice,
   updateProduct,
 } from "../controller/product-controller.js";
+import { authMiddleware } from "../../auth/middlewares/auth-middleware.js";
+import { checkRole } from "../../auth/middlewares/rbac-middleware.js";
 
 export const productRouter = Router();
 
 productRouter.get("/", getAllProducts);
-productRouter.post("/", addProduct);
+productRouter.post("/", authMiddleware, checkRole, addProduct);
 productRouter.patch("/:id", updatePrice);
 productRouter.put("/", updateProduct);
 productRouter.delete("/:id", deleteProduct);
